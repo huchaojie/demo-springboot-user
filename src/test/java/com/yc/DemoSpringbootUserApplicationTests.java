@@ -1,4 +1,4 @@
-package com.yc.demospringbootuser;
+package com.yc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
