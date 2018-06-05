@@ -25,7 +25,7 @@ public class HtmlController {
     @ApiOperation(value = "进入登录页面 跳转到login.html")
     @RequestMapping(value = "login.action")
     public String moba(){
-        return "login";
+        return "According";
     }
 
 }

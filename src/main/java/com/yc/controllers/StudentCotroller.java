@@ -37,14 +37,15 @@ public class StudentCotroller {
         jsonMode.setCode(1);
         return jsonMode;
     }
-    @ApiOperation(value = "查询所有学生")
-    @RequestMapping(value = "adltStu.action")
-    @ResponseBody
-    public JsonMode delstu(JsonMode jsonMode){
 
+    @ApiOperation(value = "删除学生")
+    @RequestMapping(value = "deltStu.action")
+    @ResponseBody
+    public JsonMode delstu(JsonMode jsonMode,int id){
+        System.out.println(id);
         return jsonMode;
     }
-    @ApiOperation(value = "查询所有学生")
+    @ApiOperation(value = "修改学生")
     @RequestMapping(value = "updatestu.action")
     @ResponseBody
     public JsonMode updatastu(JsonMode jsonMode){
