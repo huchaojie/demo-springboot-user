@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 
 @Data
-public class Students implements Serializable{
+public class Student implements Serializable{
     private static final long serialVersionUID = 1165394640980547769L;
     /**
      *学生id

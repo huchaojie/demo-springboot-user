@@ -1,6 +1,7 @@
 package com.yc.service;
 
-import com.yc.entity.Students;
+import com.yc.entity.Student;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -12,30 +13,30 @@ import java.util.List;
  */
 
 @Repository
-public interface StudentsService {
+public interface StudentService {
 
     /**
      * 查询所有
      * @param students
      * @return
      */
-    public List<Students> functionAll(Students students);
+    public List<Student> functionAll(Student students);
 
     /**
      * 删除
      * @param students
      */
-    public void  deleteStu(Students students);
+    public void  deleteStu(Student students);
 
     /**
      * 更新
      * @param students
      */
-    public void updateStu(Students students);
+    public void updateStu(Student students);
 
     /**
      * 添加
      * @param students
      */
-    public void insertStu(Students students);
+    public void insertStu(Student students);
 }

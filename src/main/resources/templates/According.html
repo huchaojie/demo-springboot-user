@@ -12,7 +12,7 @@
       <table id="product-table-tepl">
 
       </table>
-      <a>添加</a>
+      <a >添加</a>
       <script id="entry-template" type="text/x-handlebars-template">
           <tr>
               <td>学号</td>
@@ -26,8 +26,8 @@
               <td>{{sname}}</td>
               <td>{{sage}}</td>
               <td>{{gender}}</td>
-              <td><a>删除</a></td>
-              <td><a>修改</a></td>
+              <td><a href="adltStu.action">删除</a></td>
+              <td><a href="updatestu.action">修改</a></td>
           </tr>
           {{/each}}
       </script>
@@ -35,7 +35,7 @@
 
     $.ajax({
         type: 'get',
-        url: 'a.action',
+        url: 'funStuAll.action',
         dataType:"JSON",
         success: function (data) {
             var source   = $("#entry-template").html();
