@@ -31,6 +31,24 @@ public class HtmlController {
         return "reg";
     }
 
+    @ApiOperation(value = "进入登录页面 跳转到login.html")
+    @RequestMapping(value = "login.action")
+    public String moba(){
+        return "According";
+    }
+
+    @ApiOperation(value = "进入登录页面 跳转到login.html")
+    @RequestMapping(value = "a.action")
+    @ResponseBody
+    public JsonMode login(JsonMode jsonMode){
+        Students st=new Students();
+        List<Students> list=new ArrayList<Students>();
+        list=studentsService.functionAll(st);
+        jsonMode.setObj(list);
+        jsonMode.setCode(1);
+
+        return jsonMode;
+    }
 
 }
 
