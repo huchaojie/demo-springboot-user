@@ -2,7 +2,6 @@ package com.yc.service;
 
 import com.yc.entity.Students;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -19,5 +18,5 @@ public interface StudentsService {
      * @param students
      * @return
      */
-    public List<Students> functionAll(Students students);
+    List<Students> functionAll(Students students);
 }

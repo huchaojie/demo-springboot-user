@@ -17,24 +17,11 @@ public interface UsersService {
     Users login(Users users);
 
     /**
-     * 注册
-     * @param users
-     * @return
+     * 插入一条
+     * @param user
      */
-    int reg(Users users);
-    /**
-     * 添加用户
-     * @param users
-     * @return
-     */
-    int save(Users users);
+    int insertUser(Users user);
 
-    /**
-     * 添加
-     * @param users
-     * @return
-     */
-    int add(Users users);
     /**
      * 删除
      * @param id
@@ -43,36 +30,14 @@ public interface UsersService {
 
     /**
      * 更新
-     * @param users
+     * @param user
      */
-    int update(Users users);
+    int update(Users user);
 
-    /**
-     * 修改
-     * @param users
-     * @return
-     */
-    int updates(Users users);
     /**
      * 查找
      * @param id
      * @return
      */
-    Users fingById(int id);
-import com.yc.entity.Users;
-import org.springframework.stereotype.Repository;
-
-/**
- * 功能接口
- * @Author: 胡超结
- * @Date: 2018/6/4 15:43
- */
-@Repository
-public interface UsersService {
-
-    /**
-     * 插入一条
-     * @param user
-     */
-    public int insertUser(Users user);
+    Users findById(int id);
 }

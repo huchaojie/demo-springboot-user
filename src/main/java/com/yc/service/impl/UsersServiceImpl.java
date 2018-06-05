@@ -38,112 +38,36 @@ public class UsersServiceImpl implements UsersService{
     }
 
     /**
-     * 注册
-     * @param users
+     * 插入一条数据
+     * @param user
      * @return
      */
-    @Override
-    public int reg(Users users) {
-        int i= this.baseDao.add(users,"reg");
-        return i;
-    }
-
-    /**
-     * 添加
-     * @param users
-     * @return
-     */
-    @Override
-    public int save(Users users) {
-        int i= this.baseDao.add(users,"save");
-        return i;
-    }
-
-    /**
-     * 添加
-     * @param users
-     * @return
-     */
-    @Override
-    public int add(Users users) {
-        int i=this.baseDao.add(users,"add");
-        return i;
-    }
-
-    /**
-     * 删除
-     * @param id
-     * @return
-     */
-    @Override
-    public int deleteById(int id) {
-        Users users=new Users();
-        users.setId(id);
-        int result = this.baseDao.delete(users,"deleteById");
-        return result;
-    }
-
-    /**
-     * 修改
-     * @param users
-     * @return
-     */
-    @Override
-    public int update(Users users) {
-        int result = this.baseDao.update(users,"update");
-        return result;
-    }
-
-    /**
-     * 修改
-     * @param users
-     * @return
-     */
-    @Override
-    public int updates(Users users) {
-        int result = this.baseDao.update(users,"updates");
-        return result;
-    }
-
-    /**
-     * 查询
-     * @param id
-     * @return
-     */
-    @Override
-    public Users fingById(int id) {
-        Users users=new Users();
-        users.setId(id);
-        List<Users>list=this.baseDao.findAll(users, "findById");
-        return list.get(0);
-    }
-import com.yc.dao.BaseDao;
-import com.yc.entity.Users;
-import com.yc.service.UsersService;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-
-/**
- * @Author: 胡超结
- * @Date: 2018/6/4 15:46
- */
-
-@Service
-public class UsersServiceImpl implements UsersService {
-
-
-    private BaseDao baseDao;
-
-    @Resource(name = "baseDaoImpl")
-    public void setBaseDao(BaseDao baseDao){
-      this.baseDao=baseDao;
-    }
-
     @Override
     public int insertUser(Users user) {
        int i= this.baseDao.add(user,"insertUser");
        return i;
 
+    }
+
+    @Override
+    public int deleteById(int id) {
+        Users user=new Users();
+        user.setId(id);
+        int result=this.baseDao.delete(user, "deleteById");
+        return result;
+    }
+
+    @Override
+    public int update(Users user) {
+        int result=this.baseDao.update(user, "update");
+        return result;
+    }
+
+    @Override
+    public Users findById(int id) {
+        Users user=new Users();
+        user.setId(id);
+        List<Users>list=this.baseDao.findAll(user, "findById");
+        return list.get(id);
     }
 }

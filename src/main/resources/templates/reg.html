@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<!--suppress JSAnnotator -->
-<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="js/jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="static/js/jquery-2.2.0.js"></script>
     <title>教师注册</title>
 </head>
 <body onload="changeImg()">
@@ -12,7 +10,7 @@
 <form  action="user_reg.action" method="post" onsubmit="return check()">
        用户名:<input type="text" name="name" id="reg_input_name"/><br/>
        密码:<input type="password" name="password" id="reg_input_pwd"/><br/>
-      手机号码:<input type="text" name="mobile_phone" id="reg_input_phone" /><br/>
+      手机号码:<input type="text" name="phone" id="reg_input_phone" /><br/>
     年龄:<input type="text" name="age" id="reg_input_age" /><br/>
     性别:<input type="text" name="sex" id="reg_input_sex" /><br/>
     电子邮件:<input type="text" name="email" id="reg_input_email" /><br/>
@@ -21,13 +19,11 @@
 
 
 <script type="text/javascript">
-
-
-    function dosubmit() {
+    function dosubmit(){
         var users={
             name : $("#reg_input_name").val(),
             password : $("#reg_input_pwd").val(),
-            Mobile_Phone : $("#reg_input_phone").val(),
+            phone : $("#reg_input_phone").val(),
             age : $("#reg_input_age").val(),
             sex : $("#reg_input_sex").val(),
             email : $("#reg_input_email").val(),

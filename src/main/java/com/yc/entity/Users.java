@@ -1,7 +1,5 @@
 package com.yc.entity;
 
-import java.util.Date;
-
 public class Users {
     private Integer id;
 
@@ -9,17 +7,13 @@ public class Users {
 
     private String password;
 
-    private Integer mobilePhone;
+    private Integer phone;
 
     private Integer age;
 
     private String sex;
 
     private String email;
-
-    private Date registertime;
-
-    private Date updatetime;
 
     public Users(int id, String name, String passwords) {
         this.id=id;
@@ -52,12 +46,12 @@ public class Users {
         this.password = password == null ? null : password.trim();
     }
 
-    public Integer getMobilePhone() {
-        return mobilePhone;
+    public Integer getPhone() {
+        return phone;
     }
 
-    public void setMobilePhone(Integer mobilePhone) {
-        this.mobilePhone = mobilePhone;
+    public void setPhone(Integer phone) {
+        this.phone = phone;
     }
 
     public Integer getAge() {
@@ -84,19 +78,4 @@ public class Users {
         this.email = email == null ? null : email.trim();
     }
 
-    public Date getRegistertime() {
-        return registertime;
-    }
-
-    public void setRegistertime(Date registertime) {
-        this.registertime = registertime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
-    }
 }

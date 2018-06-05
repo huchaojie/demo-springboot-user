@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Main页面</title>
 </head>
 <body>
-<h1>添加用户</h1>
-    <button type="submit" class="btn">添加</button>
-</form>
+    <div>
+        <h1>表格</h1>
+        <form action="insertUser.action" method="post">
+            <input type="text" name="name" /><br/>
+            <input type="text" name="passsword" /><br/>
+            <input type="text" name="phone" /><br/>
+            <input type="text" name="age" /><br/>
+            <input type="text" name="sex" /><br/>
+            <input type="text" name="email" /><br/>
+            <input type="submit" value="增加" />
+        </form>
+    </div>
 </body>
 </html>

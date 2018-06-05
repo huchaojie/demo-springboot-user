@@ -9,11 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class DemoSpringbootUserApplicationTests {
 
-    /**
-     *
-     */
 	@Test
-	public void contextLoads() {
+	public void findById() throws Exception{
 
 	}
 

@@ -8,11 +8,9 @@
     <title>学生列表</title>
 </head>
 <body>
-
       <table id="product-table-tepl">
-
       </table>
-      <a>添加</a>
+      <button type="submit" class="btn">添加</button>
       <script id="entry-template" type="text/x-handlebars-template">
           <tr>
               <td>学号</td>
@@ -26,8 +24,8 @@
               <td>{{sname}}</td>
               <td>{{sage}}</td>
               <td>{{gender}}</td>
-              <td><a>删除</a></td>
-              <td><a>修改</a></td>
+              <button type="submit" class="btn">删除</button>
+              <button type="submit" class="btn">修改</button>
           </tr>
           {{/each}}
       </script>
