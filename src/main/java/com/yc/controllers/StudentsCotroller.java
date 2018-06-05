@@ -1,12 +1,11 @@
 package com.yc.controllers;
 
-import com.sun.deploy.net.HttpResponse;
 import com.yc.entity.Students;
 import com.yc.service.StudentsService;
 import com.yc.util.JsonMode;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,29 +16,27 @@ import java.util.List;
 
 /**
  * @Author: 胡超结
- * @Date: 2018/6/4 10:35
+ * @Date: 2018/6/4 20:44
  */
-
-@Api("页面跳转控制器")
-@RequestMapping(value = "/")
+@Api("学生管理")
 @Controller
-public class HtmlController {
-
+public class StudentsCotroller {
 
     @Resource(name="studentsServiceImpl")
     private StudentsService studentsService;
 
-    @ApiOperation(value = "进入注册页面 跳转到reg.html")
-    @RequestMapping(value = "reg.action")
-    public String reg(){
-        return "reg";
+
+    @ApiOperation(value = "查询所有学生")
+    @RequestMapping(value = "a.action")
+    @ResponseBody
+    public JsonMode login(JsonMode jsonMode){
+        Students st=new Students();
+        List<Students> list=new ArrayList<Students>();
+        list=studentsService.functionAll(st);
+        jsonMode.setObj(list);
+        jsonMode.setCode(1);
+        return jsonMode;
     }
 
-    @ApiOperation(value = "进入登录页面 跳转到login.html")
-    @RequestMapping(value = "login.action")
-    public String moba(){
-        return "According";
-    }
 
 }
-

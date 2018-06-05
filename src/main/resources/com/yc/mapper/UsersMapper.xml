@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.mapper.UsersMapper">
+
+    <insert id="insertUser" parameterType="Users">
+        insert into users( name, password,mobile_phone, age, sex,email)
+        values (#{name}, #{password},#{mobile_phone}, #{age}, #{sex}, #{email})
+    </insert>
+
+</mapper>
