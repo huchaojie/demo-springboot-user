@@ -1,7 +1,6 @@
 
 CREATE database stu;
 
---学生表
 CREATE TABLE `students` (
   `sid` int(10) NOT NULL AUTO_INCREMENT COMMENT '学生id',
   `sname` varchar(20) NOT NULL COMMENT '学生姓名',
@@ -10,8 +9,14 @@ CREATE TABLE `students` (
   PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of students
+-- ----------------------------
 
-
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户Id',
   `name` varchar(255) NOT NULL COMMENT '用户名',
@@ -22,3 +27,10 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL COMMENT '电子邮件',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into users ( name, password,mobile_phone, age, sex,email) values
+      ("a","a",12,18,"男","163@qq.com")
+-- ----------------------------
+-- Records of users
+-- ----------------------------

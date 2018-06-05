@@ -1,17 +1,18 @@
 package com.yc.dao.impl;
 
-import com.yc.dao.BaseDao;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
+import com.yc.dao.BaseDao;
 
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @Author: 胡超结
- * @Date: 2018/6/4 15:42
+ * @author hx
+ * @date 2018/6/4
+ * @param<T>
  */
 @Repository
 public class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao<T>{
@@ -19,15 +20,12 @@ public class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao<T>{
     private String mapperLocation="com.yc.mapper.";
     @Override
     @Resource(name="sqlSessionFactory")
-    public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+    public void setSqlSessionFactiry(SqlSessionFactory sqlSessionFactory){
         super.setSqlSessionFactory(sqlSessionFactory);
-
     }
-
     private String getMapperId(T t,String sqlId){
         return mapperLocation+t.getClass().getSimpleName()+"Mapper."+sqlId;
     }
-
 
     @Override
     public List<T> findAll(T t, String sqlId) {

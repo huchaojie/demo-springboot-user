@@ -26,7 +26,7 @@ public class Users implements Serializable{
     /**
      *老师手机
      */
-    private Integer mobile_phone;
+    private Integer phone;
 
     /**
      *老师年龄
