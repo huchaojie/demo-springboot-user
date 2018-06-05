@@ -26,9 +26,6 @@ import java.util.List;
 public class HtmlController {
 
 
-    @Resource(name="studentsServiceImpl")
-    private StudentsService studentsService;
-
     @ApiOperation(value = "进入注册页面 跳转到reg.html")
     @RequestMapping(value = "reg.action")
     public String reg(){

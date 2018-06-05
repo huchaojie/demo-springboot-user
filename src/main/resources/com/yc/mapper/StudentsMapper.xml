@@ -2,22 +2,51 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.mapper.StudentsMapper">
 
-      <select id="functionAll" parameterType="Students" resultType="Students">
-          select *  from  students where
-          <trim prefix="(" suffix=")" suffixOverrides="," >
-              <if test="sid != null" >
-                  sid,
-              </if>
-              <if test="sname != null" >
-                  sname,
-              </if>
-              <if test="sage != null" >
-                  sage,
-              </if>
-              <if test="gender != null" >
-                  gender,
-              </if>
-          </trim>
-         1=1
-      </select>
+    <select id="functionAll" parameterType="Students" resultType="Students">
+        select *  from  students where
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="sid != null" >
+                sid,
+            </if>
+            <if test="name != null" >
+                name,
+            </if>
+            <if test="sage != null" >
+                sage,
+            </if>
+            <if test="gender != null" >
+                gender,
+            </if>
+        </trim>
+        1=1
+    </select>
+
+    <delete id="deleteStu" parameterType="Students">
+        DELETE   from  students where sid=#{sid}
+    </delete>
+
+    <update id="updateStu" parameterType="Students">
+        update  from  students set
+        <set>
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="age!=null">
+                age=#{age},
+            </if>
+            <if test="gender != null" >
+                gender=#{gender},
+            </if>
+        </set>
+        <if test="rid!=null">
+            where sid=#{sid}
+        </if>
+    </update>
+
+
+    <insert id="insertStu" parameterType="Students">
+        insert into students (name,sage,gender)
+        VALUE ((#{name}, #{sage},#{gender})
+    </insert>
+
 </mapper>

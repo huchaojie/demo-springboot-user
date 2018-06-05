@@ -7,9 +7,9 @@
     <script type="text/javascript" src="js/jquery-2.2.0.js"></script>
     <title>教师注册</title>
 </head>
-<body onload="changeImg()">
+<body >
 
-<form  action="user_reg.action" method="post" onsubmit="return check()">
+<form  action="user_reg.action" method="post" >
        用户名:<input type="text" name="name" id="reg_input_name"/><br/>
        密码:<input type="password" name="password" id="reg_input_pwd"/><br/>
       手机号码:<input type="text" name="mobile_phone" id="reg_input_phone" /><br/>
@@ -27,7 +27,7 @@
         var users={
             name : $("#reg_input_name").val(),
             password : $("#reg_input_pwd").val(),
-            Mobile_Phone : $("#reg_input_phone").val(),
+            mobile_phone : $("#reg_input_phone").val(),
             age : $("#reg_input_age").val(),
             sex : $("#reg_input_sex").val(),
             email : $("#reg_input_email").val(),

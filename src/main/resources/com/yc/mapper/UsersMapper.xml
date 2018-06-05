@@ -3,7 +3,7 @@
 <mapper namespace="com.yc.mapper.UsersMapper">
 
     <insert id="insertUser" parameterType="Users">
-        insert into users( name, password,mobile_phone, age, sex,email)
+        insert into users( sname, password,mobile_phone, age, sex,email)
         values (#{name}, #{password},#{mobile_phone}, #{age}, #{sex}, #{email})
     </insert>
 

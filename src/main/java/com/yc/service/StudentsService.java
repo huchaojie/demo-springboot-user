@@ -20,4 +20,22 @@ public interface StudentsService {
      * @return
      */
     public List<Students> functionAll(Students students);
+
+    /**
+     * 删除
+     * @param students
+     */
+    public void  deleteStu(Students students);
+
+    /**
+     * 更新
+     * @param students
+     */
+    public void updateStu(Students students);
+
+    /**
+     * 添加
+     * @param students
+     */
+    public void insertStu(Students students);
 }

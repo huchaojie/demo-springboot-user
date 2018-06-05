@@ -25,7 +25,22 @@ public class StudentsServiceImpl implements StudentsService{
     public List<Students> functionAll(Students students) {
         List<Students> list=new ArrayList<Students>();
        list= baseDao.findAll(students,"functionAll");
-       System.out.println(list);
         return list;
+    }
+
+    @Override
+    public void deleteStu(Students students) {
+        baseDao.delete(students,"deleteStu");
+    }
+
+    @Override
+    public void updateStu(Students students) {
+        baseDao.update(students,"updateStu");
+    }
+
+    @Override
+    public void insertStu(Students students) {
+
+        baseDao.add(students,"insertStu");
     }
 }
