@@ -62,6 +62,7 @@ public class StudentCotroller {
         return jsonMode;
     }
 
+
     @RequestMapping(value = "updateStuden.action")
     @ResponseBody
     public JsonMode updatastuden(JsonMode jsonMode, HttpSession session,Student st){

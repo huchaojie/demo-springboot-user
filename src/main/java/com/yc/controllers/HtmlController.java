@@ -53,8 +53,8 @@ public class HtmlController {
     }
 
     @ApiOperation(value = "进入显示页面 跳转到UpdataStu.html")
-    @RequestMapping(value = "updatestu.action")
-    public String updataStu(int id , HttpSession session){
+    @RequestMapping(value = "funselectA.action")
+    public String funselectA(int id , HttpSession session){
         session.setAttribute("id",id);
         return "updataStu";
     }
