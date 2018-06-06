@@ -21,8 +21,9 @@ public class HtmlController {
         return "login";
     }
 
+
     @ApiOperation(value = "进入注册页面 跳转到reg.html")
-    @RequestMapping(value = "reg")
+    @RequestMapping(value = "reg.action")
     public String reg(){
         return "reg";
     }

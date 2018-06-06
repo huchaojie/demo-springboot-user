@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.mapper.StudentMapper">
+
+    <select id="functionAll" parameterType="Student" resultType="Student">
+        select *  from  students where
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="sid != null" >
+                sid,
+            </if>
+            <if test="sname != null" >
+                sname,
+            </if>
+            <if test="sage != null" >
+                sage,
+            </if>
+            <if test="gender != null" >
+                gender,
+            </if>
+        </trim>
+        1=1
+    </select>
+
+    <delete id="deleteStu" parameterType="Student">
+        DELETE   from  students where sid=#{sid}
+    </delete>
+
+    <update id="updateStu" parameterType="Student">
+        update  from  students set
+        <set>
+            <if test="sname!=null">
+                sname=#{sname},
+            </if>
+            <if test="age!=null">
+                age=#{age},
+            </if>
+            <if test="gender != null" >
+                gender=#{gender},
+            </if>
+        </set>
+        <if test="rid!=null">
+            where sid=#{sid}
+        </if>
+    </update>
+
+
+    <insert id="insertStu" parameterType="Student">
+        insert into students (sname,sage,gender)
+        VALUE ((#{sname}, #{sage},#{gender})
+    </insert>
+
+</mapper>

@@ -22,9 +22,10 @@ public class UserRegCotroller {
     private UsersService usersService;
 
     @ApiOperation(value = "注册")
-    @RequestMapping(value = "/insertUser.action",method = RequestMethod.POST)
-    public void insertUser(Users user){
+    @RequestMapping(value = "user_reg.action")
+    public String User_reg(Users user){
         usersService.insertUser(user);
+        return "login";
     }
 
 

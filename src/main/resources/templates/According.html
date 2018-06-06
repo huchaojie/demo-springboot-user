@@ -7,9 +7,11 @@
     <title>学生列表</title>
 </head>
 <body>
+
       <table id="product-table-tepl">
+
       </table>
-      <button type="submit" class="btn">添加</button>
+      <a >添加</a>
       <script id="entry-template" type="text/x-handlebars-template">
           <tr>
               <td>学号</td>
@@ -23,8 +25,8 @@
               <td>{{sname}}</td>
               <td>{{sage}}</td>
               <td>{{gender}}</td>
-              <button type="submit" class="btn">删除</button>
-              <button type="submit" class="btn">修改</button>
+              <td><a href="deltStu.action&id={{sid}}">删除</a></td>
+              <td><a href="updatestu.action&id={{sid}}">修改</a></td>
           </tr>
           {{/each}}
       </script>
@@ -32,7 +34,7 @@
 
     $.ajax({
         type: 'get',
-        url: 'a.action',
+        url: 'funStuAll.action',
         dataType:"JSON",
         success: function (data) {
             var source   = $("#entry-template").html();
