@@ -22,7 +22,7 @@ public class HtmlController {
     }
 
     @ApiOperation(value = "进入注册页面 跳转到reg.html")
-    @RequestMapping(value = "user_reg")
+    @RequestMapping(value = "reg")
     public String reg(){
         return "reg";
     }

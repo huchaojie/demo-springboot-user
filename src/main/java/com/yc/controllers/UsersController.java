@@ -53,12 +53,12 @@ public class UsersController {
         }
     }
 
-    @ApiOperation(value = "添加数据")
-    @RequestMapping(value="/insertUser.action",method = RequestMethod.POST)
-    public @ResponseBody String  insertUser(Users user) {
-        this.usersService.insertUser(user);
-        return "index";
-    }
+//    @ApiOperation(value = "添加数据")
+//    @RequestMapping(value="/insertUser.action",method = RequestMethod.POST)
+//    public @ResponseBody String  insertUser(Users user) {
+//        usersService.insertUser(user);
+//        return "index";
+//    }
 
     @ApiOperation(value = "删除数据")
     @ApiImplicitParam(name = "id", value = "用户id", required = true, dataType = "int")
