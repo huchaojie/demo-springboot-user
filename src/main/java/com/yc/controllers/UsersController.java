@@ -77,7 +77,7 @@ public class UsersController {
     @RequestMapping(value= "/updateUser.action",method= RequestMethod.POST)
     public @ResponseBody int updataUser(int id,String userName,String password) {
         String passwords=Encrypt.md5AndSha(password);
-        Users user=new Users(id,userName,passwords);
+        Users user=new Users();
         int result=usersService.update(user);
         return result;
     }

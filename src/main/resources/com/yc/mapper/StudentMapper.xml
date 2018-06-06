@@ -26,19 +26,19 @@
     </delete>
 
     <update id="updateStu" parameterType="Student">
-        update  from  students set
+        update  students
         <set>
             <if test="sname!=null">
                 sname=#{sname},
             </if>
-            <if test="age!=null">
-                age=#{age},
+            <if test="sage!=null">
+                sage=#{sage},
             </if>
             <if test="gender != null" >
                 gender=#{gender},
             </if>
         </set>
-        <if test="rid!=null">
+        <if test="sid!=null">
             where sid=#{sid}
         </if>
     </update>

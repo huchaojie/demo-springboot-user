@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./js/jquery-2.2.0.js"></script>
+    <script src="./js/handlebars-v4.0.11.js"></script>
+    <title>学生列表</title>
+</head>
+<body>
+
+<table id="product-table-tepl">
+
+</table>
+
+<script id="entry-template" type="text/x-handlebars-template">
+    <tr>
+        <td>学号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+    </tr>
+    {{#each this}}
+    <tr>
+        <td>{{sid}}</td>
+        <td><input type="text" value="{{sname}}" id="input_name_text"/></td>
+        <td><input type="text" value="{{sage}}"id="input_age_text"/></td>
+        <td><input type="text" value="{{gender}}"id="input_gender_text"/></td>
+        <td><a href="javascript:updat();">确认</a></td>
+    </tr>
+    {{/each}}
+</script>
+<script>
+    $(function () {
+        $.ajax({
+            type:"POST",
+            url:"updateAstu.action",
+        });
+    })
+
+    $.ajax({
+        type: 'POST',
+        url: 'funStuAll.action',
+        dataType:"JSON",
+        success: function (data) {
+            var source   = $("#entry-template").html();
+            var template = Handlebars.compile(source);
+
+            Handlebars.registerHelper("myCount" , function(index){
+                return index + 1 ;
+            });
+            var html=template(data.obj);
+            document.getElementById("product-table-tepl").innerHTML = html;
+        }
+    });
+  function  updat(){
+    var studen={
+        sname : $("#input_name_text").val(),
+        sage : $("#input_age_text").val(),
+        gender : $("#input_gender_text").val(),
+    }
+    $.ajax({
+        type: 'POST',
+        url: 'updateStuden.action',
+        data:studen,
+        success:function (data) {
+            if(data.code=1){
+                alert("修改成功");
+                window.location.href = "loginUser.action";
+
+            }else{
+                alert("修改失败");
+            }
+        }
+    });
+  }
+</script>
+
+</body>
+</html>

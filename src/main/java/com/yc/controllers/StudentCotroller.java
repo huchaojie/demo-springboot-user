@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,14 +43,32 @@ public class StudentCotroller {
     @RequestMapping(value = "deltStu.action")
     @ResponseBody
     public JsonMode delstu(JsonMode jsonMode,int id){
-        System.out.println(id);
+        Student stu=new Student();
+        stu.setSid(id);
+            studentService.deleteStu(stu);
+            jsonMode.setCode(1);
         return jsonMode;
     }
     @ApiOperation(value = "修改学生")
-    @RequestMapping(value = "updatestu.action")
+    @RequestMapping(value = "updateAstu.action")
     @ResponseBody
-    public JsonMode updatastu(JsonMode jsonMode){
+    public JsonMode updatastu(JsonMode jsonMode, HttpSession session){
+        Integer id=(Integer) session.getAttribute("id");
+        Student st=new Student();
+        st.setSid(id);
+        List<Student> list=new ArrayList<Student>();
+        list= studentService.functionAll(st);
+        jsonMode.setObj(list);
+        return jsonMode;
+    }
 
+    @RequestMapping(value = "updateStuden.action")
+    @ResponseBody
+    public JsonMode updatastuden(JsonMode jsonMode, HttpSession session,Student st){
+        Integer id=(Integer) session.getAttribute("id");
+        st.setSid(id);
+        studentService.updateStu(st);
+        jsonMode.setCode(1);
         return jsonMode;
     }
 
