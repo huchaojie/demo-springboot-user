@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  */
 
 @Api("页面跳转控制器")
-@RequestMapping(value = "/")
+@RequestMapping("/")
 @Controller
 public class HtmlController {
 
@@ -35,7 +35,7 @@ public class HtmlController {
     }
 
     @ApiOperation(value = "进入登录页面 跳转到login.html")
-    @RequestMapping(value = "login.action")
+    @RequestMapping(value = "according")
     public String moba(){
         return "login";
     }
