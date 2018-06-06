@@ -52,7 +52,7 @@ public class Users implements Serializable{
     }
 
     public Users(){
-        
+
     }
     public String getName() {
         return name;

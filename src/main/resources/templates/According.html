@@ -25,15 +25,15 @@
               <td>{{sname}}</td>
               <td>{{sage}}</td>
               <td>{{gender}}</td>
-              <td><a href="deltStu.action&id={{sid}}">删除</a></td>
-              <td><a href="updatestu.action&id={{sid}}">修改</a></td>
+              <td><a href="javascript:delstu(id={{sid}});">删除</a></td>
+              <td><a href="javascript:updatastu(id={{sid}});">修改</a></td>
           </tr>
           {{/each}}
       </script>
 <script>
 
     $.ajax({
-        type: 'get',
+        type: 'POST',
         url: 'funStuAll.action',
         dataType:"JSON",
         success: function (data) {
@@ -47,6 +47,31 @@
             document.getElementById("product-table-tepl").innerHTML = html;
         }
     });
+
+    function  delstu(id){
+        $.ajax({
+            type:"POST",
+            url:"deltStu.action?id="+id,
+            success:function (data){
+                if(data.code=1){
+                    alert("删除成功");
+                    window.location.href = "loginUser.action";
+
+                }else{
+                    alert("删除失败");
+                }
+            }
+        });
+
+    }
+
+    function  updatastu(id){
+        $.ajax({
+            type:"POST",
+            url:"funselectA.action?id="+id,
+        });
+
+    }
 </script>
 
 </body>

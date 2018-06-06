@@ -31,6 +31,12 @@ public class HtmlController {
     @ApiOperation(value = "进入页面 跳转到login.html")
     @RequestMapping(value = "According.action")
     public String moba(){
+        return "login";
+    }
+
+    @ApiOperation(value = "进入登录页面 跳转到login.html")
+    @RequestMapping(value = "loginUser.action")
+    public String mobaUers(){
         return "According";
     }
 
@@ -38,6 +44,13 @@ public class HtmlController {
     @RequestMapping(value = "main.action")
     public String main(){
         return "main";
+    }
+
+    @ApiOperation(value = "进入显示页面 跳转到UpdataStu.html")
+    @RequestMapping(value = "funselectA.action")
+    public String funselectA(int id , HttpSession session){
+        session.setAttribute("id",id);
+        return "updataStu";
     }
 
 }
