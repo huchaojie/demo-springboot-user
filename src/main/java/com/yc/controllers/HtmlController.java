@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @Author: 胡超结
  * @Date: 2018/6/4 10:35

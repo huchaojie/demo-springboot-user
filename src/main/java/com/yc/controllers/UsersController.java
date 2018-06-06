@@ -59,6 +59,6 @@ public class UsersController {
     @RequestMapping(value="/insertUser.action",method = RequestMethod.POST)
     public @ResponseBody String  insertUser(Users user) {
        int result = usersService.insertUser(user);
-        return String.valueOf(result);
-    }
+       return String.valueOf(result);
+   }
 }

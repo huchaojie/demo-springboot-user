@@ -54,15 +54,18 @@ public class Users implements Serializable{
     public Users(){
 
     }
+
     public String getName() {
         return name;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 }
