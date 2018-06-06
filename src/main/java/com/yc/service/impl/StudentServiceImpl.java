@@ -39,7 +39,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void insertStu(Student student) {
-
         baseDao.add(student,"insertStu");
     }
 }

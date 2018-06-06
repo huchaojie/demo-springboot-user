@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HtmlController {
 
     @ApiOperation(value = "登录页面")
-    @RequestMapping(value={"","/","login"})
+    @RequestMapping(value="login.action")
     public String login() {
         return "login";
     }
@@ -28,14 +28,14 @@ public class HtmlController {
         return "reg";
     }
 
-    @ApiOperation(value = "进入登录页面 跳转到login.html")
-    @RequestMapping(value = "according")
+    @ApiOperation(value = "进入页面 跳转到login.html")
+    @RequestMapping(value = "According.action")
     public String moba(){
         return "According";
     }
 
-    @ApiOperation(value = "进入登录页面 跳转到login.html")
-    @RequestMapping(value = "main")
+    @ApiOperation(value = "进入添加页面 跳转到main.html")
+    @RequestMapping(value = "main.action")
     public String main(){
         return "main";
     }

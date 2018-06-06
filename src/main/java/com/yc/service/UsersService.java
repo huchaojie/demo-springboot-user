@@ -21,23 +21,4 @@ public interface UsersService {
      * @param user
      */
     int insertUser(Users user);
-
-    /**
-     * 删除
-     * @param id
-     */
-    int deleteById(int id);
-
-    /**
-     * 更新
-     * @param user
-     */
-    int update(Users user);
-
-    /**
-     * 查找
-     * @param id
-     * @return
-     */
-    Users findById(int id);
 }

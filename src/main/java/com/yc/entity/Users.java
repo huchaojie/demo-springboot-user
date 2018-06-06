@@ -4,6 +4,10 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * 何翔
+ * data 2018/6/6
+ */
 @Data
 public class Users implements Serializable{
     private static final long serialVersionUID = -5672032970916393908L;
@@ -43,11 +47,22 @@ public class Users implements Serializable{
      */
     private String email;
 
-   public Users(){
+    public Users(int id, String userName, String passwords) {
 
     }
 
+    public Users(){
+        
+    }
     public String getName() {
         return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

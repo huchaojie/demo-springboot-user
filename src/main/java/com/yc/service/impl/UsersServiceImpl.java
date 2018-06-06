@@ -48,26 +48,4 @@ public class UsersServiceImpl implements UsersService{
        return i;
 
     }
-
-    @Override
-    public int deleteById(int id) {
-        Users user=new Users();
-        user.setId(id);
-        int result=this.baseDao.delete(user, "deleteById");
-        return result;
-    }
-
-    @Override
-    public int update(Users user) {
-        int result=this.baseDao.update(user, "update");
-        return result;
-    }
-
-    @Override
-    public Users findById(int id) {
-        Users user=new Users();
-        user.setId(id);
-        List<Users>list=this.baseDao.findAll(user, "findById");
-        return list.get(id);
-    }
 }

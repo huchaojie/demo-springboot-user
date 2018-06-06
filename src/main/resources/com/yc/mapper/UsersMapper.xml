@@ -10,27 +10,4 @@
         insert into users(name,password,phone,age,sex,email)
         values (#{name}, #{password},#{phone}, #{age}, #{sex}, #{email})
    </insert>
-
-    <select id="findById" parameterType="Users" resultType="Integer">
-        select * from users where id=#{id}
-    </select>
-
-    <update id="update" parameterType="Users">
-        update users
-        <set>
-            <if test="name!=null">
-                userName=#{userName},
-            </if>
-            <if test="password!=null">
-                password=#{password},
-            </if>
-        </set>
-        <if test="id!=null">
-            where id=#{id}
-        </if>
-    </update>
-
-    <delete id="deleteById" parameterType="Users"><!-- uid=1是用户这个角色不能删除 -->
-        delete from users where id=#{id} and id!=1
-    </delete>
 </mapper>

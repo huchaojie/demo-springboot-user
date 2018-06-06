@@ -1,4 +1,4 @@
-import static org.junit.Assert.*;
+package com.yc.entity;
 
 public class UsersTest {
 
